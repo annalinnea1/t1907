@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       //Skapa ny variabel och stoppar in nytt element
+       let newNode = document.createElement('div')
+       //HTML i nytt element = text
+       newNode.innerHTML = '<h1>Hello World by JS</h1>'
+       newNode.style.color = 'red'
+       //Lägg till child (newNode) i dokuementet 
+       document.body.appendChild(newNode)
+   </script>
+</body>
+</html>
