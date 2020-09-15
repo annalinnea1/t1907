@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       //We created a new HTML Node, a <div>, and stored it in a constant
+       let newNode = document.createElement('div')
+       //We assigned some HTML markup to the new node
+       newNode.innerHTML = '<h1>Hello World by JS</h1>'
+       newNode.style.color = 'red'
+       //We attached the new node to the <body> part of our HTML page.
+       document.body.appendChild(newNode)
+   </script>
+</body>
+</html>

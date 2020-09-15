@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body onkeydown="handlePress()">
+    <script>
+      // Head 1
+      let newNode = document.createElement("div");
+      newNode.innerHTML = "<h1>Welcome to the BMI calculator!</h1>";
+      newNode.style.color = "lightpink";
+      document.body.appendChild(newNode);
+      let secondNode = document.createElement("div");
+      secondNode.innerHTML = "<h3>Choose between metric and imperial: </h3>";
+      document.body.appendChild(secondNode);
+    </script>
+    <select id="method">
+      <option value="metric">Metric</option>
+      <option value="imperial">Imperial</option>
+    </select>
+    <script>
+      // Head 2
+      let nextNode = document.createElement("div");
+      nextNode.innerHTML =
+        "<h3>Enter your values and click the button or press ENTER to get your BMI value: </h3>";
+      document.body.appendChild(nextNode);
+    </script>
+    <input type="text" id="weight" placeholder="Weight in kg"/>
+    <input type="text" id="height" placeholder="Height in cm" />
+    <button id="calculate">Calculate</button>
+    <div id="results"></div>
+    <script src="./assets/js/bmi_ui.js"></script>
+    <script src="./assets/js/bmi.js"></script>
+    <script>
+      const handlePress = () => {
+        if (event.keyCode === 13) {
+          calculateBmi();
+        }
+      };
+    </script>
+  </body>
+</html>
