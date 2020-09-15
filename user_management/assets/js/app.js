@@ -23,11 +23,18 @@ const displayNavigation = (response) => {
   let buttonsDisplay = document.createElement("div");
   // Lägger till knapp som man kan komma till föregående respektive nästa sida
   // ? turnary operator: om page == total_pages är sant fösta strängen, annars tom sträng
-  let prevLink = page > total_pages/page-1 ? `<button onclick="fetchPage(${page - 1})"><<</button>`:''
-  let nextLink = page < total_pages ?`<button onclick="fetchPage(${page + 1})">>></button>`:''
+  let prevLink =
+    page > total_pages / page - 1
+      ? `<button onclick="fetchPage(${page - 1})"><<</button>`
+      : "";
+  let nextLink =
+    page < total_pages
+      ? `<button onclick="fetchPage(${page + 1})">>></button>`
+      : "";
   buttonsDisplay.innerHTML = prevLink + nextLink;
   usersDisplayNode.appendChild(buttonsDisplay);
 };
+
 const displayUsers = (response) => {
   response.data.forEach((user) => {
     let userDiv = document.createElement("div");
@@ -37,7 +44,7 @@ const displayUsers = (response) => {
     // <p> Gör att man hoppar ner en rad </p>
     html += `<p><a href="mailto:${user.email}">${user.email}</a></p>`;
     userDiv.innerHTML = html;
-    userDiv.style.color = "lightpink"
+    userDiv.style.color = "lightpink";
     usersDisplayNode.appendChild(userDiv);
   });
 };
